@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:openDrawer="start"
+    >
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true"
+        android:scrollbarThumbVertical="@android:color/transparent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <com.synnapps.carouselview.CarouselView
+                android:id="@+id/carouselView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:fillColor="#FFFFFFFF"
+                app:layout_constraintBottom_toTopOf="@id/tv_men_collection"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:pageColor="#00000000"
+                app:radius="4dp"
+                app:slideInterval="3000"
+                app:strokeColor="#FF777777"
+                app:strokeWidth="1dp"
+                tools:layout_editor_absoluteX="20dp" />
+            <TextView
+                android:id="@+id/tv_men_collection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mens_collection"
+                android:textSize="20sp"
+                style="@style/textview_style"
+                app:layout_constraintBottom_toTopOf="@id/grdProducts"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carouselView"
+                android:layout_marginVertical="20sp"
+                />
+            <GridView
+                app:layout_constraintTop_toBottomOf="@id/tv_men_collection"
+                android:id="@+id/grdProducts"
+                android:numColumns="2"
+                android:verticalSpacing="10dp"
+                android:horizontalSpacing="10dp"
+                android:stretchMode="columnWidth"
+                android:gravity="center"
+                android:layout_marginHorizontal="10sp"
+                android:paddingVertical="10sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbarThumbVertical="@android:color/transparent"
+                />
+            <TextView
+                android:id="@+id/tv_women_collection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/women_collection"
+                android:textSize="20sp"
+                style="@style/textview_style"
+                app:layout_constraintBottom_toTopOf="@id/tv_women_collection"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/grdProducts"
+                android:layout_marginVertical="20sp"
+                />
+            <GridView
+                app:layout_constraintTop_toBottomOf="@id/tv_women_collection"
+                android:layout_marginVertical="20sp"
+                android:id="@+id/grdProductswomen"
+                android:numColumns="2"
+                android:verticalSpacing="10dp"
+                android:horizontalSpacing="10dp"
+                android:stretchMode="columnWidth"
+                android:gravity="center"
+                android:layout_marginHorizontal="10sp"
+                android:paddingVertical="10sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbarThumbVertical="@android:color/transparent"
+                />
+
+            <TextView
+                android:id="@+id/tv_newest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/newest_collection"
+                android:textSize="20sp"
+                style="@style/textview_style"
+                app:layout_constraintBottom_toTopOf="@id/grdProductsnewest"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/grdProductswomen"
+                android:layout_marginVertical="20sp"
+                />
+
+
+<!--            <HorizontalScrollView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/horizontalScrollView"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/tv_newest"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/btnscroll"-->
+<!--                android:scrollbars="none"-->
+<!--                android:layout_marginBottom="20sp"-->
+<!--                >-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    >-->
+
+<!--                </LinearLayout>-->
+
+
+
+<!--            </HorizontalScrollView>-->
+            <GridView
+                android:id="@+id/grdProductsnewest"
+                android:numColumns="2"
+                android:verticalSpacing="10dp"
+                android:horizontalSpacing="10dp"
+                android:stretchMode="columnWidth"
+                android:gravity="center"
+                android:layout_marginHorizontal="10sp"
+                android:paddingVertical="10sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_newest"
+                app:layout_constraintStart_toStartOf="parent"
+                android:scrollbarThumbVertical="@android:color/transparent"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnscroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/grdProductsnewest"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/scroll_to_top"
+                app:cornerRadius="30sp"
+                app:icon="@drawable/ic_arrow_upward_black_18dp"
+                app:iconTint="?colorPrimary"
+                android:backgroundTint="?colorOnPrimary"
+                android:textColor="?colorPrimary"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        app:menu="@menu/menu"
+        app:headerLayout="@layout/nav_header"
+        android:id="@+id/navView"
+        android:layout_gravity="start"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
